@@ -1,0 +1,35 @@
+/**
+ * Minimal CSS - Tree-shaken from skeleton.css
+ * Only includes classes actually used in the application
+ */
+
+/* Container - responsive centered content container */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Mobile first responsive breakpoints */
+@media (min-width: 400px) {
+  .container {
+    width: 85%;
+    padding: 0;
+  }
+}
+
+@media (min-width: 550px) {
+  .container {
+    width: 80%;
+  }
+}
+
+/* Clearfix utility */
+.container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
