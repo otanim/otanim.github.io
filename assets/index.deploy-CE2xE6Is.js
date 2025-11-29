@@ -366,53 +366,39 @@ to {
       overflow: hidden !important;
     }
     .terminal-page {
-      min-height: 100dvh !important;
-      max-height: 100dvh !important;
       height: 100dvh !important;
-      padding: 20px 12px !important;
-      padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px)) !important;
-      justify-content: stretch !important;
+      padding: 12px !important;
+      padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px)) !important;
       box-sizing: border-box !important;
       overflow: hidden !important;
     }
-    /* Stretch wrapper to fill page */
+    /* Wrapper fills available space */
     .terminal-wrapper {
       flex: 1 !important;
       display: flex !important;
       flex-direction: column !important;
-      max-width: 100%;
       min-height: 0 !important;
+      max-height: 100% !important;
     }
-    /* Content container fills remaining space */
+    /* Content area scrolls */
     .terminal-wrapper > div:last-child {
       flex: 1 !important;
       min-height: 0 !important;
-      display: flex !important;
-      flex-direction: column !important;
-      overflow: hidden !important;
+      overflow: auto !important;
+      -webkit-overflow-scrolling: touch !important;
     }
-    /* terminalRef div fills container */
+    /* Inner scroll container for horizontal */
     .terminal-wrapper > div:last-child > div {
-      flex: 1 !important;
-      min-height: 0 !important;
-      min-width: 600px;
+      min-width: 580px;
     }
-    /* xterm fills its container */
-    .xterm {
-      height: 100% !important;
-    }
-    .xterm-screen {
-      height: 100% !important;
-    }
-    /* xterm viewport handles scrolling */
-    .xterm-viewport {
-      height: 100% !important;
-      overflow-y: auto !important;
-      overflow-x: auto !important;
-      scrollbar-width: none;
-    }
+    /* Hide scrollbars but keep scrolling */
+    .terminal-wrapper > div:last-child::-webkit-scrollbar,
     .xterm-viewport::-webkit-scrollbar {
       display: none;
+    }
+    .terminal-wrapper > div:last-child,
+    .xterm-viewport {
+      scrollbar-width: none;
     }
   }
   @media (max-width: 840px) and (orientation: landscape) {
