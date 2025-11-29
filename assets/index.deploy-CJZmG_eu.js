@@ -386,13 +386,16 @@ to {
     .terminal-wrapper > div:last-child {
       flex: 1;
       min-height: 0;
-      overflow: hidden;
+      overflow-x: auto;
+      overflow-y: hidden;
       display: flex;
       flex-direction: column;
+      -webkit-overflow-scrolling: touch;
     }
     .terminal-wrapper > div:last-child > div {
       flex: 1;
       min-height: 0;
+      min-width: 600px;
     }
     .xterm {
       height: 100% !important;
