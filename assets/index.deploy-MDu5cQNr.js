@@ -419,6 +419,11 @@ to {
       width: 100% !important;
       right: 0 !important;
       height: 100% !important;
+      scrollbar-width: none;
+    }
+    .xterm-viewport::-webkit-scrollbar {
+      width: 0;
+      display: none;
     }
   }
   @media (max-width: 840px) and (orientation: landscape) {
