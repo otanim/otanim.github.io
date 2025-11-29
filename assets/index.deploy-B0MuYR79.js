@@ -392,14 +392,17 @@ to {
     .terminal-wrapper > div:last-child > div {
       min-width: 580px;
     }
-    /* Hide scrollbars but keep scrolling */
-    .terminal-wrapper > div:last-child::-webkit-scrollbar,
+    /* Show thin scrollbars on mobile */
     .xterm-viewport::-webkit-scrollbar {
-      display: none;
+      width: 4px;
+      height: 4px;
     }
-    .terminal-wrapper > div:last-child,
+    .xterm-viewport::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.3);
+      border-radius: 2px;
+    }
     .xterm-viewport {
-      scrollbar-width: none;
+      scrollbar-width: thin;
     }
   }
   @media (max-width: 840px) and (orientation: landscape) {
