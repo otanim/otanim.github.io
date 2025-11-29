@@ -365,19 +365,23 @@ to {
   }
   @media (max-width: 840px) {
     .terminal-page {
+      min-height: 100dvh !important;
+      height: 100dvh !important;
       padding: 20px 12px !important;
+      padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px)) !important;
       justify-content: flex-start !important;
-      padding-top: 20px !important;
-      padding-bottom: 20px !important;
+      box-sizing: border-box !important;
     }
     .terminal-wrapper {
       flex: 1;
       display: flex;
       flex-direction: column;
       max-width: 100%;
+      min-height: 0;
     }
     .terminal-wrapper > div:last-child {
       flex: 1;
+      min-height: 0;
     }
   }
 `,terminalStyles={page:{minHeight:"100vh",background:"#0f0f14",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"20px"},backLink:{position:"absolute",top:"20px",left:"20px",color:"#7aa2f7",textDecoration:"none",fontFamily:"system-ui, sans-serif",fontSize:"14px"},wrapper:{width:"100%",maxWidth:"800px",boxShadow:"0 0 0 1px rgba(255, 255, 255, 0.1), 0 8px 32px rgba(0, 0, 0, 0.5)",borderRadius:"8px",overflow:"hidden"},bar:{height:"32px",width:"100%",background:"#24283b",display:"flex",alignItems:"center",paddingLeft:"12px",gap:"8px",boxSizing:"border-box"},dot:{width:"12px",height:"12px",borderRadius:"50%"},title:{marginLeft:"12px",color:"#565f89",fontSize:"13px",fontFamily:"system-ui, sans-serif"},container:{background:"#1a1b26",padding:"12px"}},BIRTH_DATE$1=new Date("1994-01-05"),calculateAge=z=>{const t0=Date.now()-z.getTime(),l0=new Date(t0);return Math.abs(l0.getUTCFullYear()-1970)},files={"news.txt":["[2025-01]: Building Armenian handwriting font generator with multi-agent AI orchestration","[2024-06]: Started BCI research - real-time EEG with OpenBCI Cyton + Daisy 16-ch","[2024-01]: Customs automation tool reduced declaration time from 8 hours to 15 min","[2021-06]: Joined Ringier South Africa as Senior Full-Stack Engineer"],"passwords.txt":["Do NOT try to decrypt it via base64 !!","arman@linguacode.com: SSdtIHNvIHNvcnJ5Li4NCkknbSBiYWQgd2l0aCBlbmNyeXB0aW9uLi4gOjM="],"achievements.txt":["╔════════════════════════════════════════════════════════════════╗","║                     KEY ACHIEVEMENTS                           ║","╚════════════════════════════════════════════════════════════════╝","","  • API performance: 900ms → 450ms (50% reduction)","  • Platform downtime reduced by 40%","  • 30% faster delivery via 7-agent AI orchestration","  • 60% fewer failed deployments through CI hardening","  • 90K+ job listings/day automated pipeline (99.7% accuracy)","  • 8 credential exposures caught before production","  • Mentored 6+ engineers across 3 distributed teams","  • MTTR reduced from 6 hours to 2 hours"],"resume.txt":["╔════════════════════════════════════════════════════════════════╗","║                    ARMAN YEGHIAZARYAN                          ║","║     Senior Full-Stack Engineer | Node.js • Electron • AI      ║","╚════════════════════════════════════════════════════════════════╝","","CURRENT:  Ringier South Africa (Remote) - Sr. Full-Stack Engineer","STACK:    TypeScript, Node.js, React, AWS, Electron, Terraform","FOCUS:    AI Orchestration, Multi-agent Systems, BCI Research","","EXPERIENCE: 11 years building production platforms","  • 2M+ requests/day job platform (MyJobs Myanmar)","  • 90K+ daily job ingestion pipeline (Ringier SA)","  • 5 years Electron desktop applications","  • Led 4 engineering teams across 3 timezones","","INTERESTS: Cybersecurity, Neurotechnology, Engineering Leadership"]},TerminalPro=({standalone:z=!1})=>{var I0;const t0=reactExports.useRef(null),l0=reactExports.useRef(null),T=reactExports.useRef(""),n0=reactExports.useRef([]),M=reactExports.useRef(-1),X=reactExports.useRef(""),[s0,h0]=reactExports.useState(()=>Math.floor(Math.random()*9)),[p0,E0]=reactExports.useState(()=>Math.floor(Math.random()*asciiBanners.length)),[i0,N0]=reactExports.useState(()=>{const L0=localStorage.getItem("terminalDarkMode");return L0!==null?L0==="true":!0}),[w0,C0]=reactExports.useState(()=>localStorage.getItem("godMode")==="true"),[S0,f0]=reactExports.useState(!1),m0=reactExports.useRef(!1),a0=reactExports.useRef(w0),c0=reactExports.useRef(""),v0=i0?darkThemes:lightThemes,Z0=v0[s0],M0=asciiBanners[p0],R0=useMusicPlayer();reactExports.useEffect(()=>{a0.current=w0},[w0]);const g0=["help","intro","skills","experience","projects","contact","ls","cat","clear","cls","github","linkedin","cv","history"],x0=reactExports.useCallback(L0=>{L0.write(`\r
