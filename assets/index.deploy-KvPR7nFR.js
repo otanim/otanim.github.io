@@ -387,13 +387,23 @@ to {
       flex: 1;
       min-height: 0;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .terminal-wrapper > div:last-child > div {
+      flex: 1;
+      min-height: 0;
     }
     .xterm {
-      height: 100%;
+      height: 100% !important;
+    }
+    .xterm-screen {
+      height: 100% !important;
     }
     .xterm-viewport {
       width: 100% !important;
       right: 0 !important;
+      height: 100% !important;
     }
   }
   @media (max-width: 840px) and (orientation: landscape) {
