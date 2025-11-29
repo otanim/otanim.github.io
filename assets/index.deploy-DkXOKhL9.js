@@ -386,7 +386,14 @@ to {
     .terminal-wrapper > div:last-child {
       flex: 1;
       min-height: 0;
-      overflow: auto;
+      overflow: hidden;
+    }
+    .xterm {
+      height: 100%;
+    }
+    .xterm-viewport {
+      width: 100% !important;
+      right: 0 !important;
     }
   }
   @media (max-width: 840px) and (orientation: landscape) {
