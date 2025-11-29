@@ -367,6 +367,7 @@ to {
     html, body, #app {
       height: 100dvh !important;
       overflow: hidden !important;
+      overscroll-behavior: none !important;
     }
     .terminal-page {
       min-height: 100dvh !important;
@@ -376,7 +377,8 @@ to {
       padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px)) !important;
       justify-content: flex-start !important;
       box-sizing: border-box !important;
-      overflow: hidden !important;
+      overflow: auto !important;
+      overscroll-behavior: contain !important;
     }
     .terminal-wrapper {
       flex: 1;
